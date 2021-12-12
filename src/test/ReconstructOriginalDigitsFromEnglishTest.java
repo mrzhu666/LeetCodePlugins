@@ -1,3 +1,5 @@
+package test;
+
 import java.util.*;
 import java.lang.*;
 
@@ -5,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 
-public class Test {
+public class ReconstructOriginalDigitsFromEnglishTest {
   public static void main(String[] args) {
     String[] nums = new String[]{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
