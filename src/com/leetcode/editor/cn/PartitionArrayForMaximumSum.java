@@ -52,21 +52,7 @@ public class PartitionArrayForMaximumSum{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
   public int maxSumAfterPartitioning(int[] arr, int k) {
-    int n=arr.length;
-    int[][] maxNum=new int[][];
-    int[]dp=new int[n];
-    for(int i=0;i<n;i++)
-      dp[i]=arr[i];
-    for(int len=2;len<=k;len++)
-      for(int i=0;i+len-1<n;i++)
-        dp[i][i+len-1]=Math.max(dp[i][i],dp[i+1][i+len-1]/(len-1))*len;
-    for(int len=k+1;len<=n;len++)
-      for(int i=0;i+len-1<n;i++)
-        for(int j=1;j<=k;j++){
-          dp[i][i+len-1]=Math.max(dp[i][i+len-1],dp[i][i+j-1]+dp[i+j][i+len-1]);
-        }
-
-    return dp[0][n-1];
+    return 0;
   }
 }
 //leetcode submit region end(Prohibit modification and deletion)
