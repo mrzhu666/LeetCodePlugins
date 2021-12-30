@@ -63,14 +63,13 @@ class Solution{
   public int countQuadruplets(int[] nums) {
     int n = nums.length;
     int ans = 0;
-    Map<Integer, Integer> cnt = new HashMap<Integer, Integer>();
-    for (int c = n - 2; c >= 2; --c) {
-      cnt.put(nums[c + 1], cnt.getOrDefault(nums[c + 1], 0) + 1);
-      for (int a = 0; a < c; ++a) {
-        for (int b = a + 1; b < c; ++b) {
-          if(cnt.getOrDefault(nums[a] + nums[b] + nums[c], 0)!=0)
-            System.out.format("%d %d %d %d\n",nums[a],nums[b],nums[c],nums[a]+nums[b]+nums[c]);
-          ans += cnt.getOrDefault(nums[a] + nums[b] + nums[c], 0);
+    int[] hash=new int[101];
+    for(int c=n-2;c>=0;c--){
+      hash[nums[c+1]]++;
+      for(int a=0;a<c-1;a++){
+        for(int b=a+1;b<c;b++){
+          if(nums[a]+nums[b]+nums[c]<101)
+            ans+=hash[nums[a]+nums[b]+nums[c]];
         }
       }
     }
@@ -80,6 +79,25 @@ class Solution{
 
 //leetcode submit region end(Prohibit modification and deletion)
 
+
+  class Solution2{
+    public int countQuadruplets(int[] nums) {
+      int n = nums.length;
+      int ans = 0;
+      Map<Integer, Integer> cnt = new HashMap<Integer, Integer>();
+      for (int c = n - 2; c >= 2; --c) {
+        cnt.put(nums[c + 1], cnt.getOrDefault(nums[c + 1], 0) + 1);
+        for (int a = 0; a < c; ++a) {
+          for (int b = a + 1; b < c; ++b) {
+            if(cnt.getOrDefault(nums[a] + nums[b] + nums[c], 0)!=0)
+              System.out.format("%d %d %d %d\n",nums[a],nums[b],nums[c],nums[a]+nums[b]+nums[c]);
+            ans += cnt.getOrDefault(nums[a] + nums[b] + nums[c], 0);
+          }
+        }
+      }
+      return ans;
+    }
+  }
   // 未解决
   // 关于重复数字计数需要多加考虑
   class Solution1 {
