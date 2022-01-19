@@ -53,50 +53,17 @@ class Solution {
     public void sortColors(int[] nums) {
       int n=nums.length;
       if(n==1) return;
-      int p1=0,p2=0,i=1;
-      int val;
-      /*考虑初始化，使两个指针分别指向1和2的头部，麻烦*/
-      while(i<n && p1==p2){
-        if(nums[i]==0){
-          val=nums[p1];
-          nums[p1]=nums[i];
-          nums[i]=val;
-          p1++;p2++;
+      int left=-1,right=n;
+      for(int i=0;i<n && i<right;i++) {
+        if(nums[i]==0) {
+          nums[++left]=0;
+          if(i!=left)
+            nums[i]=1;
+        }else if(nums[i]==2) {
+          nums[i]=nums[--right];
+          nums[right]=2;
+          i--;
         }
-        else if(nums[i]==1){
-          if(nums[p2]==2){
-            nums[p2]=1;
-            nums[i]=2;
-            p2++;
-          }
-          else if(nums[p1]==0){
-            p1++;p2++;
-          }
-
-        }
-        else{
-          if(nums[p1]==1)
-            p2=i;
-          else if(nums[p1]==0){
-            p1++;p2++;
-          }
-        }
-        i++;
-      }
-//      System.out.println(Arrays.toString(nums)+' '+i+' '+p1+' '+p2);
-      for(;i<n && p2<n;i++){
-        if(nums[i]==0){
-          nums[p1]=0;
-          nums[p2]=1;
-          nums[i]=2;
-          p1++;p2++;
-        }
-        else if(nums[i]==1){
-          nums[p2]=1;
-          nums[i]=2;
-          p2++;
-        }
-//        System.out.println(Arrays.toString(nums)+' '+i+' '+p1+' '+p2);
       }
     }
 }

@@ -26,7 +26,9 @@ package com.leetcode.editor.cn;
 import java.util.*;
 import java.lang.*;
 
-public class LongestDuplicateSubstring{
+public class
+
+LongestDuplicateSubstring{
   public static void main(String[] args) {
     Solution solution = new LongestDuplicateSubstring().new Solution();
     System.out.print(solution);

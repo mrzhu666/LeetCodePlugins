@@ -30,7 +30,8 @@ package com.leetcode.editor.cn;
 import java.util.*;
 import java.lang.*;
 
-public class LongestPalindromicSubstring{
+public class
+LongestPalindromicSubstring{
   public static void main(String[] args) {
     Solution solution = new LongestPalindromicSubstring().new Solution();
     System.out.print(solution.longestPalindrome("aaaaa"));
@@ -67,3 +68,23 @@ class Solution {
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
+//
+//class Solution {
+//  public int longestPalindromeSubseq(String s) {
+//    int n=s.length();
+//    int ans=1;
+//    char[] ch=s.toCharArray();
+////      if(ch[0]==ch[1]) ans=2;
+//    for(int i=0;i<n;i++){
+//
+//      // i为中心
+//      int j=1;
+//      for(;i-j>=0 && i+j<=n-1 && ch[i-j]==ch[i+j];j++);
+//      ans=Math.max(2*(j-1)+1,ans);
+//      j=1;
+//      for(;i-j+1>=0 && i+j<=n-1 && ch[i-j+1]==ch[i+j];j++);
+//      ans=Math.max(2*(j-1),ans);
+//    }
+//
+//    return ans;
+//  }
