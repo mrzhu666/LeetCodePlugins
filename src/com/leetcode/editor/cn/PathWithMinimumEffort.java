@@ -8,7 +8,20 @@ public class PathWithMinimumEffort {
         Solution solution = new PathWithMinimumEffort().new Solution();
         System.out.println(solution);
     }
-    
-    
+    class UnionFind{
+        UnionFind(){
+            System.out.println("aa");
+        }
+    }
+
+
+    class Solution {
+        public int minimumEffortPath(int[][] heights) {
+            int n=heights.length;
+            int m=heights[0].length;
+
+            return 0;
+        }
+    }
     
 }
