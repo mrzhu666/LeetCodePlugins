@@ -65,7 +65,13 @@ public class CountNumberOfPairsWithAbsoluteDifferenceK {
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int countKDifference(int[] nums, int k) {
-
+        int ans=0;
+        int[] hash=new int[101];
+        for(int v:nums)
+            hash[v]++;
+        for(int i=1;i+k<101;i++)
+            ans+=hash[i]*hash[i+k];
+        return ans;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
